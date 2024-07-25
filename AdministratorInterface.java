@@ -11,7 +11,11 @@ public class AdministratorInterface {
             System.out.println("2. Enroll student in course");
             System.out.println("3. Assign grade to student");
             System.out.println("4. Calculate overall grade for student");
-            System.out.println("5. Exit");
+            System.out.println("5. Update student");
+            System.out.println("6. Update course");
+            System.out.println("7. View all students");
+            System.out.println("8. View all courses");
+            System.out.println("9. Exit");
             System.out.print("Select an option: ");
             int option = scanner.nextInt();
             scanner.nextLine(); // consume newline
@@ -107,6 +111,39 @@ public class AdministratorInterface {
                     break;
 
                 case 5:
+                    System.out.print("Enter student ID to update: ");
+                    String updateStudentId = scanner.nextLine();
+                    System.out.print("Enter new student name: ");
+                    String newStudentName = scanner.nextLine();
+                    CourseManagement.updateStudent(updateStudentId, newStudentName);
+                    break;
+
+                case 6:
+                    System.out.print("Enter course code to update: ");
+                    String updateCourseCode = scanner.nextLine();
+                    System.out.print("Enter new course name: ");
+                    String newCourseName = scanner.nextLine();
+                    System.out.print("Enter new maximum capacity: ");
+                    int newMaxCapacity = scanner.nextInt();
+                    scanner.nextLine(); // consume newline
+                    CourseManagement.updateCourse(updateCourseCode, newCourseName, newMaxCapacity);
+                    break;
+
+                case 7:
+                    System.out.println("All Students:");
+                    for (Student s : CourseManagement.getStudents()) {
+                        System.out.println("ID: " + s.getId() + ", Name: " + s.getName());
+                    }
+                    break;
+
+                case 8:
+                    System.out.println("All Courses:");
+                    for (Course c : CourseManagement.getCourses()) {
+                        System.out.println("Code: " + c.getCourseCode() + ", Name: " + c.getName() + ", Capacity: " + c.getMaxCapacity());
+                    }
+                    break;
+
+                case 9:
                     System.out.println("Exiting...");
                     scanner.close();
                     System.exit(0);

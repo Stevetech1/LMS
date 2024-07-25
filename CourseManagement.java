@@ -48,6 +48,27 @@ public class CourseManagement {
         students.add(student);
     }
 
+    // Method to update student information
+    public static void updateStudent(String studentId, String newName) {
+        for (Student student : students) {
+            if (student.getId().equals(studentId)) {
+                student.setName(newName);
+                break;
+            }
+        }
+    }
+
+    // Method to update course information
+    public static void updateCourse(String courseCode, String newName, int newMaxCapacity) {
+        for (Course course : courses) {
+            if (course.getCourseCode().equals(courseCode)) {
+                course.setName(newName);
+                course.setMaxCapacity(newMaxCapacity);
+                break;
+            }
+        }
+    }
+
     // Getter methods for courses and students
     public static List<Course> getCourses() {
         return courses;
