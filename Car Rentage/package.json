@@ -1,0 +1,15 @@
+{
+  "name": "car-rentage",
+  "version": "1.0.0",
+  "description": "Vehicle Rentage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Vehicle",
+    "Rentage"
+  ],
+  "author": "Steve Ojata",
+  "license": "ISC"
+}
